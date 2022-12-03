@@ -20,13 +20,14 @@ class BasketVCTableViewCell: UITableViewCell {
     @IBOutlet weak var PizzaCountNumberBasketVC: UILabel!
     @IBOutlet weak var PizzaMinusNumberBasketVC: UIButton!
     @IBOutlet weak var PizzaPlusNumberBasketVC: UIButton!
+    
     @IBAction func PizzaMinusNumberButtonBasketVC(_ sender: Any) {
+        PizzaCountNumberBasketVC.text = String(Int(PizzaCountNumberBasketVC.text!)! - 1)
     }
 
     
     @IBAction func PizzaPlusNumberButtonBasketVC(_ sender: Any) {
         PizzaCountNumberBasketVC.text = String(Int(PizzaCountNumberBasketVC.text!)! + 1)
-        addPizzaToCart()
     }
     
     
