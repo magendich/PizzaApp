@@ -95,11 +95,27 @@ func addPizzaToCart() { // добавить пиццу в корзину +1 sele
 }
 
 
-func removePizzaFromCart(pizza: Pizza) {
-    // удалить пиццу из массивы пицц, который лежит в корзине
-    print("Hellow world!")
-    
+func plusOnePizzaToBasket() { // добавляется пицца в корзину при ражатии +1
+    for i in 0..<items.count {
+        if items[i].pizza == pizzaInCartTableView {
+            items[i].count += 1
+        }
+    }
 }
+
+func removePizzaFromCart() { // удалить пиццу из массивы пицц, который лежит в корзине
+    
+    for i in 0..<items.count {
+        if items[i].pizza == pizzaInCartTableView && items[i].count == 1 {
+            items.remove(at: i)
+            break
+            
+        } else if items[i].count != 1 && items[i].pizza == pizzaInCartTableView  {
+            items[i].count -= 1
+        }
+    }
+}
+
 
 func clearCart() {
     // перелаем объект корзины, в котором будет лежать массив пицц и очищаем его

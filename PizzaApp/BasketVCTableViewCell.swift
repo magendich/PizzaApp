@@ -8,9 +8,10 @@
 import UIKit
 import AudioToolbox
 
+
 class BasketVCTableViewCell: UITableViewCell {
     
-    
+    var plusOneButton: (() -> ())?
     var basketTableView = BasketViewController()
     
     @IBOutlet weak var PizzaTitleBasketVC: UILabel!
@@ -23,11 +24,15 @@ class BasketVCTableViewCell: UITableViewCell {
     
     @IBAction func PizzaMinusNumberButtonBasketVC(_ sender: Any) {
         PizzaCountNumberBasketVC.text = String(Int(PizzaCountNumberBasketVC.text!)! - 1)
+        plusOneButton?()
+        removePizzaFromCart()
     }
 
     
     @IBAction func PizzaPlusNumberButtonBasketVC(_ sender: Any) {
         PizzaCountNumberBasketVC.text = String(Int(PizzaCountNumberBasketVC.text!)! + 1)
+        plusOneButton?()
+        plusOnePizzaToBasket()
     }
     
     

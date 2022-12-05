@@ -52,14 +52,19 @@ class BasketViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let basketVCCell = BasketVCTableView.dequeueReusableCell(withIdentifier: idBasketCell) as! BasketVCTableViewCell
-            
+        let basketVCCell = BasketVCTableView.dequeueReusableCell(withIdentifier: idBasketCell, for: indexPath) as! BasketVCTableViewCell
         
             basketVCCell.PizzaTitleBasketVC.text = items[indexPath.row].pizza.title
             basketVCCell.PizzaImageBasketVC.downloaded(from: items[indexPath.row].pizza.img)
             basketVCCell.PizzaDescriptionBasketVC.text = items[indexPath.row].pizza.description
             basketVCCell.PizzaCountNumberBasketVC.text = "\(items[indexPath.row].count)"
         basketVCCell.PizzaSumPriceBasketVC.text = "\(items[indexPath.row].sumPrice)"
+        
+        basketVCCell.plusOneButton = {
+            pizzaInCartTableView = items[indexPath.row].pizza
+            print(pizzaInCartTableView)
+        }
+            
         
         
         return basketVCCell
