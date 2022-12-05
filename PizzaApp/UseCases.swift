@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AudioToolbox
 
 
 func selectedPizzas() { // добавить выбранную пиццу в корзину
@@ -100,6 +101,7 @@ func plusOnePizzaToBasket() { // добавляется пицца в корзи
         if items[i].pizza == pizzaInCartTableView {
             items[i].count += 1
         }
+        AudioServicesPlaySystemSound(SystemSoundID (1000))
     }
 }
 
@@ -109,10 +111,10 @@ func removePizzaFromCart() { // удалить пиццу из массивы п
         if items[i].pizza == pizzaInCartTableView && items[i].count == 1 {
             items.remove(at: i)
             break
-            
         } else if items[i].count != 1 && items[i].pizza == pizzaInCartTableView  {
             items[i].count -= 1
         }
+        AudioServicesPlaySystemSound(SystemSoundID (1000))
     }
 }
 

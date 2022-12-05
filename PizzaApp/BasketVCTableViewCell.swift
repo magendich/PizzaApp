@@ -12,7 +12,6 @@ import AudioToolbox
 class BasketVCTableViewCell: UITableViewCell {
     
     var plusOneButton: (() -> ())?
-    var basketTableView = BasketViewController()
     
     @IBOutlet weak var PizzaTitleBasketVC: UILabel!
     @IBOutlet weak var PizzaImageBasketVC: UIImageView!
