@@ -119,6 +119,13 @@ func removePizzaFromCart() { // удалить пиццу из массивы п
 }
 
 
+func calculationTotalAmount() { // метод для расчет суммы всех пицц на кнопке сделать заказ в корзине
+    fullPrice = 0
+    for index in 0..<items.count {
+        fullPrice += items[index].sumPrice
+    }    
+}
+
 func clearCart() {
     // перелаем объект корзины, в котором будет лежать массив пицц и очищаем его
 }

@@ -24,16 +24,16 @@ class BasketViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         //overrideUserInterfaceStyle = .light
         MakeOrderOutlet.layer.cornerRadius = 20
-        MakeOrderOutlet.titleLabel?.text = "Оформить заказ на "
- 
+        MakeOrderOutlet.setTitle("Оформить заказ на \(fullPrice) ₽", for: .normal)
+        
         BasketVCTableView.delegate = self
         BasketVCTableView.dataSource = self
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         BasketVCTableView.reloadData()
+        MakeOrderOutlet.setTitle("Оформить заказ на \(fullPrice) ₽", for: .normal)
     }
     
 
@@ -64,10 +64,12 @@ class BasketViewController: UIViewController, UITableViewDelegate, UITableViewDa
             basketVCCell.PizzaCountNumberBasketVC.text = "\(items[indexPath.row].count)"
             basketVCCell.PizzaSumPriceBasketVC.text = "\(items[indexPath.row].sumPrice)"
             
-            basketVCCell.plusOneButton = {
+            basketVCCell.plusOneButtonClosure = {
                 pizzaInCartTableView = items[indexPath.row].pizza
-                print(pizzaInCartTableView)
                 self.BasketVCTableView.reloadData()
+            basketVCCell.plusOrMinusButtonCloureForMakeOrderButton = {
+                self.MakeOrderOutlet.setTitle("Оформить заказ на \(fullPrice) ₽", for: .normal)
+                }
             }
         }
         

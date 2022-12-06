@@ -11,7 +11,8 @@ import AudioToolbox
 
 class BasketVCTableViewCell: UITableViewCell {
     
-    var plusOneButton: (() -> ())?
+    var plusOneButtonClosure: (() -> ())?
+    var plusOrMinusButtonCloureForMakeOrderButton: (() -> ())?
     
     @IBOutlet weak var PizzaTitleBasketVC: UILabel!
     @IBOutlet weak var PizzaImageBasketVC: UIImageView!
@@ -23,15 +24,19 @@ class BasketVCTableViewCell: UITableViewCell {
     
     @IBAction func PizzaMinusNumberButtonBasketVC(_ sender: Any) {
         PizzaCountNumberBasketVC.text = String(Int(PizzaCountNumberBasketVC.text!)! - 1)
-        plusOneButton?()
+        plusOneButtonClosure?()
         removePizzaFromCart()
+        calculationTotalAmount()
+        plusOrMinusButtonCloureForMakeOrderButton?()
     }
 
     
     @IBAction func PizzaPlusNumberButtonBasketVC(_ sender: Any) {
         PizzaCountNumberBasketVC.text = String(Int(PizzaCountNumberBasketVC.text!)! + 1)
-        plusOneButton?()
+        plusOneButtonClosure?()
         plusOnePizzaToBasket()
+        calculationTotalAmount()
+        plusOrMinusButtonCloureForMakeOrderButton?()
     }
     
     

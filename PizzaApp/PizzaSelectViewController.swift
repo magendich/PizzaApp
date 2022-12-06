@@ -10,6 +10,8 @@ import UIKit
 class PizzaSelectViewController: UIViewController {
     
     var pizzaModelSelectVC: Pizza!
+    var addToBasketButtonCloureForMakeOrderButton: (() -> ())?
+    
     
     @IBOutlet weak var pizzaImageSelectController: UIImageView!
     @IBOutlet weak var pizzaTitleSelectController: UILabel!
@@ -19,7 +21,8 @@ class PizzaSelectViewController: UIViewController {
     @IBAction func addToBasketButton(_ sender: Any) {
         pizzaTitleSelectControllerForCheck = pizzaTitleSelectController.text!
         addPizzaToCart()
-    }
+        calculationTotalAmount()
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
