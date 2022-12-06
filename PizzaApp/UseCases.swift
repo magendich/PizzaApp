@@ -25,7 +25,7 @@ func selectedPizzas() { // добавить выбранную пиццу в к�
                         countInArray += 1
                         if countInArray != 0 {
                             for i in 0..<items.count {
-                                if pizzaOrdered!.pizza.title == items[i].pizza.title {
+                                if pizzaOrdered!.pizza?.title == items[i].pizza?.title {
                                     items[i].count += 1
                                     print("count+=1, есть одинаковые")
                                     print(items)
@@ -68,7 +68,7 @@ func addPizzaToCart() { // добавить пиццу в корзину +1 sele
                         countInArray += 1
                         if countInArray != 0 {
                             for i in 0..<items.count {
-                                if pizzaOrdered!.pizza.title == items[i].pizza.title {
+                                if pizzaOrdered!.pizza?.title == items[i].pizza?.title {
                                     items[i].count += 1
                                     print("count+=1, есть одинаковые")
                                     print(items)

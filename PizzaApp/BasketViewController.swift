@@ -54,19 +54,23 @@ class BasketViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let basketVCCell = BasketVCTableView.dequeueReusableCell(withIdentifier: idBasketCell, for: indexPath) as! BasketVCTableViewCell
         
-            basketVCCell.PizzaTitleBasketVC.text = items[indexPath.row].pizza.title
-            basketVCCell.PizzaImageBasketVC.downloaded(from: items[indexPath.row].pizza.img)
-            basketVCCell.PizzaDescriptionBasketVC.text = items[indexPath.row].pizza.description
-            basketVCCell.PizzaCountNumberBasketVC.text = "\(items[indexPath.row].count)"
-        basketVCCell.PizzaSumPriceBasketVC.text = "\(items[indexPath.row].sumPrice)"
-        
-        basketVCCell.plusOneButton = {
-            pizzaInCartTableView = items[indexPath.row].pizza
-            print(pizzaInCartTableView)
-        }
+        if items.count == indexPath.row {
+            self.BasketVCTableView.reloadData()
             
-        
+        } else {
+            basketVCCell.PizzaTitleBasketVC.text = items[indexPath.row].pizza?.title
+            basketVCCell.PizzaImageBasketVC.downloaded(from: items[indexPath.row].pizza?.img ?? "nil")
+            basketVCCell.PizzaDescriptionBasketVC.text = items[indexPath.row].pizza?.description
+            basketVCCell.PizzaCountNumberBasketVC.text = "\(items[indexPath.row].count)"
+            basketVCCell.PizzaSumPriceBasketVC.text = "\(items[indexPath.row].sumPrice)"
+            
+            basketVCCell.plusOneButton = {
+                pizzaInCartTableView = items[indexPath.row].pizza
+                print(pizzaInCartTableView)
+                self.BasketVCTableView.reloadData()
+            }
+        }
         
         return basketVCCell
-        }
+    }
 }

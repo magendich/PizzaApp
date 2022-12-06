@@ -20,11 +20,11 @@ struct Pizza: Decodable, Hashable {
 
 struct PizzaOrdered: Hashable {
 
-    var pizza: Pizza
+    var pizza: Pizza?
     var count: Int
     var sumPrice: Int {
         get {
-            return Int(pizza.price)! * count
+            return Int(pizza?.price ?? "nil")! * count
         }
     }
 }
