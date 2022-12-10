@@ -44,6 +44,7 @@ struct DeliveryInfo {
     let name: String
     let phone: String
     let city: String
+    let street: String
     let houseNumber: String
     
     enum PaymentType {

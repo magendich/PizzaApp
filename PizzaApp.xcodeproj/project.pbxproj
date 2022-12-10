@@ -25,6 +25,7 @@
 		2BA92C5129314386000D656C /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA92C5029314386000D656C /* BasketViewController.swift */; };
 		2BA92C5329315121000D656C /* BasketVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA92C5229315121000D656C /* BasketVCTableViewCell.swift */; };
 		2BA92C572932A866000D656C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA92C562932A866000D656C /* Extensions.swift */; };
+		2BD278272944E6FB00E9422A /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD278262944E6FB00E9422A /* DeliveryViewController.swift */; };
 		522FC4534AB94ACC33F4ED62 /* Pods_PizzaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF66A73E68BD9F0790B72FD /* Pods_PizzaApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		2BA92C5029314386000D656C /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		2BA92C5229315121000D656C /* BasketVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketVCTableViewCell.swift; sourceTree = "<group>"; };
 		2BA92C562932A866000D656C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2BD278262944E6FB00E9422A /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		2D4D3457ED668FA034EE547C /* Pods-PizzaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaApp.release.xcconfig"; path = "Target Support Files/Pods-PizzaApp/Pods-PizzaApp.release.xcconfig"; sourceTree = "<group>"; };
 		2F1A89574E992259B4D4C353 /* Pods-PizzaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaApp.debug.xcconfig"; path = "Target Support Files/Pods-PizzaApp/Pods-PizzaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AEF66A73E68BD9F0790B72FD /* Pods_PizzaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 				2B14718D292EC67200FB2929 /* PizzaSelectViewController.swift */,
 				2BA92C5029314386000D656C /* BasketViewController.swift */,
 				2BA92C5229315121000D656C /* BasketVCTableViewCell.swift */,
+				2BD278262944E6FB00E9422A /* DeliveryViewController.swift */,
 				2B38C9672924D05E00D93BDD /* Main.storyboard */,
 				2B38C96A2924D06000D93BDD /* Assets.xcassets */,
 				2B38C96C2924D06000D93BDD /* LaunchScreen.storyboard */,
@@ -246,6 +249,7 @@
 			files = (
 				2BA92C5329315121000D656C /* BasketVCTableViewCell.swift in Sources */,
 				2B859862292B42E800B2BBA2 /* PinAdressAnnotation.swift in Sources */,
+				2BD278272944E6FB00E9422A /* DeliveryViewController.swift in Sources */,
 				2B38C9662924D05E00D93BDD /* ViewController.swift in Sources */,
 				2B859866292BF08600B2BBA2 /* ContactsTableViewCell.swift in Sources */,
 				2B54C5AC29366C440089F3FA /* DataBase.swift in Sources */,
