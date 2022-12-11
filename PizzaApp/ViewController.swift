@@ -27,9 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         TableView.delegate = self
         TableView.dataSource = self
         SearchBarMenuScreen.delegate = self
-        
-        // TableView.separatorStyle = .none // убрать линии между cell
-        //self.overrideUserInterfaceStyle = .light // поддержка только светлой темы на экране
+
         
     }
     
