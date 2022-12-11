@@ -12,7 +12,6 @@ class PizzaSelectViewController: UIViewController {
     var pizzaModelSelectVC: Pizza!
     var addToBasketButtonCloureForMakeOrderButton: (() -> ())?
     
-    
     @IBOutlet weak var pizzaImageSelectController: UIImageView!
     @IBOutlet weak var pizzaTitleSelectController: UILabel!
     @IBOutlet weak var pizzaDescriptionSelectController: UILabel!
@@ -22,6 +21,7 @@ class PizzaSelectViewController: UIViewController {
         pizzaTitleSelectControllerForCheck = pizzaTitleSelectController.text!
         addPizzaToCart()
         calculationTotalAmount()
+        hideTableView = false 
         }
     
     override func viewDidLoad() {

@@ -13,6 +13,8 @@ class BasketVCTableViewCell: UITableViewCell {
     
     var plusOneButtonClosure: (() -> ())?
     var plusOrMinusButtonCloureForMakeOrderButton: (() -> ())?
+    var hideTableViewClosure: (() -> ())?
+
     
     @IBOutlet weak var PizzaTitleBasketVC: UILabel!
     @IBOutlet weak var PizzaImageBasketVC: UIImageView!
@@ -28,6 +30,9 @@ class BasketVCTableViewCell: UITableViewCell {
         removePizzaFromCart()
         calculationTotalAmount()
         plusOrMinusButtonCloureForMakeOrderButton?()
+        if items.isEmpty {
+            hideTableViewClosure?()
+        }
     }
 
     

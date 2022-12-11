@@ -15,3 +15,5 @@ var pizzaTitleSelectControllerForCheck: String = "" // переменная, в 
 var pizzaInCartTableView: Pizza? // переменная, в которую присвается пицца, в tableview в корзине для дальнейшей проверки
 
 var fullPrice = 0 // переменная, для расчет стоимости всех пицц на кнопке сделать заказв корзине
+
+var hideTableView: Bool = true // переменная для того, чтобы передать в нее, данные и скрывать tableView
