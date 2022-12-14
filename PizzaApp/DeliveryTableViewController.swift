@@ -55,24 +55,34 @@ class DeliveryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        datePickerDeliveyTime.inputView = datePicker
-        datePicker.datePickerMode = .dateAndTime
-        let localID = Locale.preferredLanguages.first
-        datePicker.locale = Locale(identifier: localID!)
-        
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneAction))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        
-        toolBar.setItems([flexSpace,doneButton], animated: true)
-        
-        datePickerDeliveyTime.inputAccessoryView = toolBar
-        
+        createDatePicker()
     }
     
-    @objc func doneAction(){
+    func createToolBar() -> UIToolbar {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
         
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolBar.setItems([doneBtn], animated: true)
+        
+        return toolBar
+    }
+    
+    func createDatePicker() {
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.datePickerMode = .time
+        datePickerDeliveyTime.inputView = datePicker
+        datePickerDeliveyTime.inputAccessoryView = createToolBar()
+        datePicker.minuteInterval = 30
+        datePicker.minimumDate = .now
+    }
+    
+    @objc func donePressed() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
+        self.datePickerDeliveyTime.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
     }
 
 }
