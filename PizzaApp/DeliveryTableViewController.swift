@@ -9,7 +9,10 @@ import UIKit
 
 class DeliveryTableViewController: UITableViewController {
     
-    
+        
+    @IBOutlet weak var UserNameTextField: UITextField!
+    @IBOutlet weak var UserNumberTextField: UITextField!
+    let toolBar = UIToolbar()
     
     @IBOutlet weak var datePickerDeliveyTime: UITextField!
     let datePicker = UIDatePicker()
@@ -54,8 +57,14 @@ class DeliveryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if userInfo != nil {
+            UserNameTextField.text = userInfo?.name
+            UserNumberTextField.text = userInfo?.phone
+        }
+        
         createDatePicker()
+        createDoneButton()
     }
     
     func createToolBar() -> UIToolbar {
@@ -84,5 +93,23 @@ class DeliveryTableViewController: UITableViewController {
         self.datePickerDeliveyTime.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
-
+    
+    func createDoneButton() {
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(doneButtonPressed))
+        toolBar.setItems([doneButton], animated: true)
+        UserNameTextField.inputAccessoryView = toolBar
+        UserNumberTextField.inputAccessoryView = toolBar
+        
+    }
+    @objc func doneButtonPressed() {
+        if UserNameTextField.text?.isEmpty == false || UserNumberTextField.text?.isEmpty == false {
+            userInfo = UserInfo(name: UserNameTextField.text ?? "", phone: UserNumberTextField.text ?? "")
+            self.view.endEditing(true)
+            print(userInfo)
+        }
+        self.view.endEditing(true)
+    }
+    
 }

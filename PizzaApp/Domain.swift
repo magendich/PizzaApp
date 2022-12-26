@@ -39,17 +39,28 @@ struct Cart: Hashable {
 
 var items = [PizzaOrdered]()
 
-struct DeliveryInfo {
-    
+
+struct UserInfo {
     let name: String
     let phone: String
+}
+
+var userInfo: UserInfo? = nil
+
+
+struct DeliveryInfo {
+
     let city: String
     let street: String
     let houseNumber: String
     
-    enum PaymentType {
-        case cash
-        case cardOffline
-        case cardOnline
-    }
 }
+
+enum PaymentType {
+    case cash
+    case cardOffline
+    case cardOnline
+}
+
+    var deliveryInfo: DeliveryInfo? = nil
+
