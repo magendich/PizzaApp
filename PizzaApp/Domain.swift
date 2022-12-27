@@ -52,7 +52,7 @@ struct DeliveryInfo {
 
     let city: String
     let street: String
-    let houseNumber: String
+    let house: String?
     
 }
 
@@ -62,5 +62,6 @@ enum PaymentType {
     case cardOnline
 }
 
-    var deliveryInfo: DeliveryInfo? = nil
+    var deliveryInfo: DeliveryInfo?
+
 

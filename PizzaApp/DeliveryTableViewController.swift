@@ -67,6 +67,14 @@ class DeliveryTableViewController: UITableViewController {
         createDoneButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print(deliveryTime)
+        if deliveryTime != "" {
+            self.datePickerDeliveyTime.text = deliveryTime
+        }
+    }
+    
+    
     func createToolBar() -> UIToolbar {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -91,6 +99,8 @@ class DeliveryTableViewController: UITableViewController {
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
         self.datePickerDeliveyTime.text = dateFormatter.string(from: datePicker.date)
+        deliveryTime = self.datePickerDeliveyTime.text ?? ""
+        print(deliveryTime)
         self.view.endEditing(true)
     }
     

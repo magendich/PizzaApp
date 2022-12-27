@@ -15,7 +15,7 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var HouseNumberTextField: UITextField!
     @IBAction func ReadyAddressButton(_ sender: Any) {
         if CityTextField.text?.isEmpty == false ||  StreetTextField.text?.isEmpty == false || HouseNumberTextField.text?.isEmpty == false {
-            deliveryInfo = DeliveryInfo(city: CityTextField.text ?? "", street: StreetTextField.text ?? "", houseNumber: HouseNumberTextField.text ?? "")
+            deliveryInfo = DeliveryInfo(city: CityTextField.text ?? "", street: StreetTextField.text ?? "", house: HouseNumberTextField.text ?? "")
             print(deliveryInfo)
             CityTextField.resignFirstResponder()
             StreetTextField.resignFirstResponder()
@@ -33,12 +33,27 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
         if deliveryInfo != nil {
             CityTextField.text = deliveryInfo?.city
             StreetTextField.text = deliveryInfo?.street
-            HouseNumberTextField.text = deliveryInfo?.houseNumber
+            HouseNumberTextField.text = deliveryInfo?.house
         }
         
         orShowOnMap.layer.cornerRadius = 20
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+    
+        print(deliveryInfo)
+        if deliveryInfo != nil {
+            CityTextField.text = deliveryInfo?.city
+            StreetTextField.text = deliveryInfo?.street
+            HouseNumberTextField.text = deliveryInfo?.house
+        }
+        
+        CityTextField.reloadInputViews()
+        StreetTextField.reloadInputViews()
+        HouseNumberTextField.reloadInputViews()
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

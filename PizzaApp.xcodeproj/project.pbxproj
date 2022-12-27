@@ -27,6 +27,8 @@
 		2BA92C5329315121000D656C /* BasketVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA92C5229315121000D656C /* BasketVCTableViewCell.swift */; };
 		2BA92C572932A866000D656C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA92C562932A866000D656C /* Extensions.swift */; };
 		2BAF03D62958F220005E62B7 /* EnterAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF03D52958F220005E62B7 /* EnterAddressViewController.swift */; };
+		2BAF03DA295B1893005E62B7 /* MapAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF03D9295B1893005E62B7 /* MapAddressViewController.swift */; };
+		2BAF03DC295B2488005E62B7 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF03DB295B2488005E62B7 /* AddressModel.swift */; };
 		2BD278272944E6FB00E9422A /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD278262944E6FB00E9422A /* DeliveryViewController.swift */; };
 		522FC4534AB94ACC33F4ED62 /* Pods_PizzaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF66A73E68BD9F0790B72FD /* Pods_PizzaApp.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,8 @@
 		2BA92C5229315121000D656C /* BasketVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketVCTableViewCell.swift; sourceTree = "<group>"; };
 		2BA92C562932A866000D656C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2BAF03D52958F220005E62B7 /* EnterAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAddressViewController.swift; sourceTree = "<group>"; };
+		2BAF03D9295B1893005E62B7 /* MapAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAddressViewController.swift; sourceTree = "<group>"; };
+		2BAF03DB295B2488005E62B7 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		2BD278262944E6FB00E9422A /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		2D4D3457ED668FA034EE547C /* Pods-PizzaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaApp.release.xcconfig"; path = "Target Support Files/Pods-PizzaApp/Pods-PizzaApp.release.xcconfig"; sourceTree = "<group>"; };
 		2F1A89574E992259B4D4C353 /* Pods-PizzaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaApp.debug.xcconfig"; path = "Target Support Files/Pods-PizzaApp/Pods-PizzaApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				2B38C9792926A63000D93BDD /* UseCases.swift */,
 				2B38C9772924D1AC00D93BDD /* Domain.swift */,
 				2B54C5AB29366C440089F3FA /* DataBase.swift */,
+				2BAF03DB295B2488005E62B7 /* AddressModel.swift */,
 				2BA92C562932A866000D656C /* Extensions.swift */,
 				2B38C9652924D05E00D93BDD /* ViewController.swift */,
 				2B38C97B2927E1EE00D93BDD /* ModelTableViewCell.swift */,
@@ -111,6 +116,7 @@
 				2BD278262944E6FB00E9422A /* DeliveryViewController.swift */,
 				2BA4F3D02946275100AE7598 /* DeliveryTableViewController.swift */,
 				2BAF03D52958F220005E62B7 /* EnterAddressViewController.swift */,
+				2BAF03D9295B1893005E62B7 /* MapAddressViewController.swift */,
 				2B38C9672924D05E00D93BDD /* Main.storyboard */,
 				2B38C96A2924D06000D93BDD /* Assets.xcassets */,
 				2B38C96C2924D06000D93BDD /* LaunchScreen.storyboard */,
@@ -256,6 +262,7 @@
 				2BA92C5329315121000D656C /* BasketVCTableViewCell.swift in Sources */,
 				2B859862292B42E800B2BBA2 /* PinAdressAnnotation.swift in Sources */,
 				2BD278272944E6FB00E9422A /* DeliveryViewController.swift in Sources */,
+				2BAF03DC295B2488005E62B7 /* AddressModel.swift in Sources */,
 				2B38C9662924D05E00D93BDD /* ViewController.swift in Sources */,
 				2B859866292BF08600B2BBA2 /* ContactsTableViewCell.swift in Sources */,
 				2BAF03D62958F220005E62B7 /* EnterAddressViewController.swift in Sources */,
@@ -267,6 +274,7 @@
 				2B38C9642924D05E00D93BDD /* SceneDelegate.swift in Sources */,
 				2BA92C572932A866000D656C /* Extensions.swift in Sources */,
 				2BA92C5129314386000D656C /* BasketViewController.swift in Sources */,
+				2BAF03DA295B1893005E62B7 /* MapAddressViewController.swift in Sources */,
 				2B14718E292EC67200FB2929 /* PizzaSelectViewController.swift in Sources */,
 				2B38C9782924D1AC00D93BDD /* Domain.swift in Sources */,
 				2B859860292AF7EB00B2BBA2 /* MapViewController.swift in Sources */,
