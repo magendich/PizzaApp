@@ -406,7 +406,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IkJ-mp-LZW">
-                                <rect key="frame" x="-4" y="118" width="412" height="562"/>
+                                <rect key="frame" x="-5" y="118" width="412" height="562"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="9CJ-p0-XJV" kind="embed" id="WTT-Jt-NVF"/>
@@ -539,7 +539,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ghz-zV-kDw" kind="show" id="QxE-WB-09l"/>
+                                            <segue destination="ghz-zV-kDw" kind="show" identifier="" id="QxE-WB-09l"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="pm1-u2-bek">
@@ -737,7 +737,8 @@
                                     <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="bxv-EM-3Qf" kind="show" id="9Zd-2b-mEM"/>
+                                    <action selector="orShowOnMapAction:" destination="ghz-zV-kDw" eventType="touchUpInside" id="rkh-o7-gH6"/>
+                                    <segue destination="bxv-EM-3Qf" kind="show" id="dAe-6H-0AN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Номер дома" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcD-vC-XxX">
@@ -818,6 +819,7 @@
                             <constraint firstItem="i3c-jI-d70" firstAttribute="bottom" secondItem="4ll-Up-PYx" secondAttribute="bottom" id="q8d-6X-mGn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Hsh-ab-e5u"/>
                     <connections>
                         <outlet property="mapView" destination="i3c-jI-d70" id="YM3-cF-W9q"/>
                     </connections>

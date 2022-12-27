@@ -7,8 +7,21 @@
 
 import UIKit
 
-class EnterAddressViewController: UIViewController, UITextFieldDelegate {
+// MARK: Проток делегата для передачи данных адреса между контроллерами карты и полями ввода адреса
+
+protocol TransferAddressFromMapDelegate {
+    func updateAdress(deliInfo: DeliveryInfo)
+}
+
+class EnterAddressViewController: UIViewController, UITextFieldDelegate, TransferAddressFromMapDelegate {
     
+    // MARK: Метод протокола TransferAddressFromMapDelegate
+    
+    func updateAdress(deliInfo: DeliveryInfo) {
+        CityTextField.text = deliInfo.city
+        StreetTextField.text = deliInfo.street
+        HouseNumberTextField.text = deliInfo.house
+    }
     
     @IBOutlet weak var CityTextField: UITextField!
     @IBOutlet weak var StreetTextField: UITextField!
@@ -21,6 +34,16 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBOutlet weak var orShowOnMap: UIButton!
+    @IBAction func orShowOnMapAction(_ sender: Any) {
+    }
+    
+    // MARK: Переход для делегата передачи даных адреса из карты в поля данных доставки
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let mapAddressVC = segue.destination as? MapAddressViewController {
+            mapAddressVC.tranferAddressDelegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +58,6 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
         
         orShowOnMap.layer.cornerRadius = 20
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,19 +68,5 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
             StreetTextField.text = deliveryInfo?.street
             HouseNumberTextField.text = deliveryInfo?.house
         }
-        
-        CityTextField.reloadInputViews()
-        StreetTextField.reloadInputViews()
-        HouseNumberTextField.reloadInputViews()
-    }
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        CityTextField.resignFirstResponder()
-        return true
     }
 }

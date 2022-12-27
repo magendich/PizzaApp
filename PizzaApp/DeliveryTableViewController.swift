@@ -21,6 +21,9 @@ class DeliveryTableViewController: UITableViewController {
     @IBOutlet weak var ByCardToCourierPaymentOutlet: UIButton!
     @IBOutlet weak var ByCashPaymentOutlet: UIButton!
     
+    
+    // MARK: Методы для работы с radio button
+    
     @IBAction func ByCardInAppPaymentRadioButton(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
@@ -74,6 +77,8 @@ class DeliveryTableViewController: UITableViewController {
         }
     }
     
+    // MARK: Методы для создания и работы с toolBar и datePicker
+        // MARK: Создание toolBar
     
     func createToolBar() -> UIToolbar {
         let toolBar = UIToolbar()
@@ -85,6 +90,8 @@ class DeliveryTableViewController: UITableViewController {
         return toolBar
     }
     
+        // MARK: Создание datePicker
+    
     func createDatePicker() {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .time
@@ -93,6 +100,7 @@ class DeliveryTableViewController: UITableViewController {
         datePicker.minuteInterval = 30
         datePicker.minimumDate = .now
     }
+    
     
     @objc func donePressed() {
         let dateFormatter = DateFormatter()
@@ -103,6 +111,8 @@ class DeliveryTableViewController: UITableViewController {
         print(deliveryTime)
         self.view.endEditing(true)
     }
+    
+        // MARK: Создание кнопки done (готово) на toolBar datePicker
     
     func createDoneButton() {
         toolBar.sizeToFit()

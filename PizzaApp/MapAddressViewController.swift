@@ -14,9 +14,12 @@ class MapAddressViewController: UIViewController, MKMapViewDelegate, UIGestureRe
     
     
     @IBAction func readyMapButton(_ sender: Any) {
+        print(deliveryInfo)
+        tranferAddressDelegate?.updateAdress(deliInfo: deliveryInfo ?? DeliveryInfo(city: "", street: "", house: ""))
         dismiss(animated: true)
     }
     @IBOutlet weak var mapView: MKMapView!
+    
     
     var keyLat: Float = 59.940082
     var keyLong: Float = 30.312814
@@ -24,6 +27,7 @@ class MapAddressViewController: UIViewController, MKMapViewDelegate, UIGestureRe
     var objectLongitude: Double = 0
     var userAddress: DeliveryInfo?
     var result: YandexGeocoder?
+    var tranferAddressDelegate: TransferAddressFromMapDelegate?
     
     
     override func viewDidLoad() {
@@ -32,12 +36,14 @@ class MapAddressViewController: UIViewController, MKMapViewDelegate, UIGestureRe
         mapView.delegate = self
         mapView.mapType = MKMapType.standard
         
-        setLocationAndAnnotation()
+        setLocation()
         longTapGesture()
     
     }
     
-    func setLocationAndAnnotation() {
+    // MARK: Метод, когторый задаёт изначальные координаты на карте при переходе на экран карты (ценрт Санкт-Петербурга)
+    
+    func setLocation() {
         let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(keyLat), longitude: CLLocationDegrees(keyLong))
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: location, span: span)
@@ -45,6 +51,8 @@ class MapAddressViewController: UIViewController, MKMapViewDelegate, UIGestureRe
         
 
     }
+    
+    // MARK: Методы, которые отслеживают долгое нажатие на экран
     
     func longTapGesture() {
         let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongTapGesture(gestureRecognizer:)))
@@ -77,6 +85,7 @@ class MapAddressViewController: UIViewController, MKMapViewDelegate, UIGestureRe
         if gestureRecognizer.state != UIGestureRecognizer.State.began { return }
     }
     
+    // MARK: Который делает запрос в geoCoder api Яндекса и декодирует данные в структуру YandexGeocoder
     
     func parseJSON(urlString: String, completed: @escaping (Data?, Error?) -> Void) {
         

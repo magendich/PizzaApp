@@ -27,7 +27,6 @@ class PizzaSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.overrideUserInterfaceStyle = .light
         addToBasketOutlet.layer.cornerRadius = 20
         
         pizzaImageSelectController.downloaded(from: pizzaModelSelectVC!.img )
