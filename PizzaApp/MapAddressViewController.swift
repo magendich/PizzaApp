@@ -8,8 +8,14 @@
 import UIKit
 import MapKit
 
-class MapAddressViewController: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate {
 
+
+class MapAddressViewController: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate {
+    
+    
+    @IBAction func readyMapButton(_ sender: Any) {
+        dismiss(animated: true)
+    }
     @IBOutlet weak var mapView: MKMapView!
     
     var keyLat: Float = 59.940082
@@ -20,7 +26,6 @@ class MapAddressViewController: UIViewController, MKMapViewDelegate, UIGestureRe
     var result: YandexGeocoder?
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +34,6 @@ class MapAddressViewController: UIViewController, MKMapViewDelegate, UIGestureRe
         
         setLocationAndAnnotation()
         longTapGesture()
-        
     
     }
     

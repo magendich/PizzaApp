@@ -8,7 +8,7 @@
 import UIKit
 
 class EnterAddressViewController: UIViewController, UITextFieldDelegate {
-
+    
     
     @IBOutlet weak var CityTextField: UITextField!
     @IBOutlet weak var StreetTextField: UITextField!
@@ -17,11 +17,8 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
         if CityTextField.text?.isEmpty == false ||  StreetTextField.text?.isEmpty == false || HouseNumberTextField.text?.isEmpty == false {
             deliveryInfo = DeliveryInfo(city: CityTextField.text ?? "", street: StreetTextField.text ?? "", house: HouseNumberTextField.text ?? "")
             print(deliveryInfo)
-            CityTextField.resignFirstResponder()
-            StreetTextField.resignFirstResponder()
-            HouseNumberTextField.resignFirstResponder()
+            dismiss(animated: true)
         }
-        CityTextField.resignFirstResponder()
     }
     @IBOutlet weak var orShowOnMap: UIButton!
     
@@ -37,6 +34,7 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
         }
         
         orShowOnMap.layer.cornerRadius = 20
+        
         
     }
     
