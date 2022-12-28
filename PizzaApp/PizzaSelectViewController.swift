@@ -21,7 +21,8 @@ class PizzaSelectViewController: UIViewController {
         pizzaTitleSelectControllerForCheck = pizzaTitleSelectController.text!
         addPizzaToCart()
         calculationTotalAmount()
-        hideTableView = false 
+        hideTableView = false
+        showToast(message: "Товар добавлен в корзину")
         }
     
     override func viewDidLoad() {
@@ -38,5 +39,30 @@ class PizzaSelectViewController: UIViewController {
 
         
     }
-
+    
+    
+    
+    // MARK: Метод, который добавляет toaster (уведомление), что товар добавлен в корзину.
+    func showToast(message: String) {
+        let toastLabel = UILabel(frame: CGRect(x: Int((self.view.frame.size.width)/2) - 85,
+                                               y: Int(self.view.frame.size.height) - 777, width: 170, height: 35))
+        print(Int(self.view.frame.size.width))
+        print(Int(self.view.frame.size.height))
+        print(Int((self.view.frame.size.width)/2) - 85)
+        print(Int(self.view.frame.size.height) - 777)
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = UIFont(name: "Chalkboard SE Regular", size: 12.0)
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10
+        toastLabel.clipsToBounds = true
+        view.addSubview(toastLabel)
+        UIView.animate(withDuration: 1.5, delay: 0.1, options: .curveEaseIn, animations: {
+            toastLabel.alpha = 0.0
+        }, completion:  {(iscCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
 }
