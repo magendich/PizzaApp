@@ -15,12 +15,21 @@ class BasketViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var BasketVCTableView: UITableView!
     @IBOutlet weak var MakeOrderOutlet: UIButton!
+    
+    
+    @IBAction func MakeOrderTouchDownButton(_ sender: Any) {
+        MakeOrderOutlet.backgroundColor = .orange.withAlphaComponent(0.7)
+    }
+    
     @IBAction func MakeOrderButton(_ sender: Any) {
         let deliveryVC = storyboard?.instantiateViewController(withIdentifier: "DeliveryViewController") as! DeliveryViewController
         
         self.present(deliveryVC, animated: true, completion: nil)
-
+        MakeOrderOutlet.backgroundColor = .orange
     }
+    
+    
+    
     
     
     override func viewDidLoad() {

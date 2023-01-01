@@ -34,7 +34,11 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate, Transfe
         }
     }
     @IBOutlet weak var orShowOnMap: UIButton!
+    @IBAction func orShowOnMapTouchDown(_ sender: Any) {
+        orShowOnMap.backgroundColor = .orange.withAlphaComponent(0.7)
+    }
     @IBAction func orShowOnMapAction(_ sender: Any) {
+        orShowOnMap.backgroundColor = .orange
     }
     
     // MARK: Переход для делегата передачи даных адреса из карты в поля данных доставки

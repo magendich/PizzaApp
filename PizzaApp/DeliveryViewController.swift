@@ -12,7 +12,13 @@ class DeliveryViewController: UIViewController {
     @IBOutlet weak var MakeOrderDeliveryVC: UIButton!
     @IBOutlet weak var fullPriceDeliveryVC: UILabel!
     
+    @IBAction func MakeOrderDeliveryVCTouchDownAction(_ sender: Any) {
+        MakeOrderDeliveryVC.backgroundColor = .orange.withAlphaComponent(0.7)
+    }
+    
+    
     @IBAction func MakeOrderDeliveryVCAction(_ sender: Any) {
+        MakeOrderDeliveryVC.backgroundColor = .orange
     }
     
     
