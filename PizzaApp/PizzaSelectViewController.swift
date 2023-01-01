@@ -17,12 +17,16 @@ class PizzaSelectViewController: UIViewController {
     @IBOutlet weak var pizzaDescriptionSelectController: UILabel!
     @IBOutlet weak var pizzaIngredientsSelectController: UILabel!
     @IBOutlet weak var addToBasketOutlet: UIButton!
+    @IBAction func addToBasketButtonTouchDown(_ sender: Any) {
+        addToBasketOutlet.backgroundColor = UIColor.orange.withAlphaComponent(0.7)
+    }
     @IBAction func addToBasketButton(_ sender: Any) {
         pizzaTitleSelectControllerForCheck = pizzaTitleSelectController.text!
         addPizzaToCart()
         calculationTotalAmount()
         hideTableView = false
         showToast(message: "Товар добавлен в корзину")
+        addToBasketOutlet.backgroundColor = UIColor.orange
         }
     
     override func viewDidLoad() {

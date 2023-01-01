@@ -78,7 +78,7 @@ class MapAddressViewController: UIViewController, MKMapViewDelegate, UIGestureRe
             let myPin = MKPointAnnotation()
             myPin.coordinate = locationCoordinate
             print(userAddress.self)
-            myPin.title = "\(userAddress?.city ?? ""), \(userAddress?.street ?? ""), \(userAddress?.house ?? "")"
+            myPin.title = "\(userAddress?.city ?? "") \(userAddress?.street ?? "") \(userAddress?.house ?? "")"
             mapView.addAnnotation(myPin)
         }
         

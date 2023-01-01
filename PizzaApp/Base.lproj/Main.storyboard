@@ -406,7 +406,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IkJ-mp-LZW">
-                                <rect key="frame" x="-5" y="118" width="412" height="562"/>
+                                <rect key="frame" x="-7" y="116" width="412" height="564"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="9CJ-p0-XJV" kind="embed" id="WTT-Jt-NVF"/>
@@ -446,7 +446,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="DeliveryTableViewController.swift" id="9CJ-p0-XJV" customClass="DeliveryTableViewController" customModule="PizzaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" springLoaded="YES" id="F4U-Z0-DUA">
-                        <rect key="frame" x="0.0" y="0.0" width="412" height="562"/>
+                        <rect key="frame" x="0.0" y="0.0" width="412" height="564"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
                             <tableViewSection id="nri-MJ-Vgh">
@@ -682,7 +682,7 @@
             <objects>
                 <viewController storyboardIdentifier="EnterAddressViewController" id="ghz-zV-kDw" customClass="EnterAddressViewController" customModule="PizzaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ko1-ob-cmE">
-                        <rect key="frame" x="0.0" y="0.0" width="412" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="412" height="506"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес доставки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eec-wa-gQK">
@@ -726,7 +726,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAM-ku-7Cg">
-                                <rect key="frame" x="33" y="345" width="347" height="50"/>
+                                <rect key="frame" x="33" y="347" width="347" height="50"/>
                                 <color key="backgroundColor" red="0.93043726680000005" green="0.44690066579999999" blue="0.18027698989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7KB-JC-PPJ"/>
@@ -786,11 +786,11 @@
             <objects>
                 <viewController storyboardIdentifier="MapAddressViewController" id="bxv-EM-3Qf" customClass="MapAddressViewController" customModule="PizzaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qWL-a6-Pyc">
-                        <rect key="frame" x="0.0" y="0.0" width="412" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="412" height="506"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3c-jI-d70">
-                                <rect key="frame" x="0.0" y="0.0" width="412" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="412" height="506"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-ky-viX">
@@ -1006,6 +1006,7 @@
                                 <state key="normal" title="Добавить в корзину за 315 р"/>
                                 <connections>
                                     <action selector="addToBasketButton:" destination="1FN-LO-69q" eventType="touchUpInside" id="QHu-jf-Het"/>
+                                    <action selector="addToBasketButtonTouchDown:" destination="1FN-LO-69q" eventType="touchDown" id="5nb-Is-QnZ"/>
                                 </connections>
                             </button>
                         </subviews>
